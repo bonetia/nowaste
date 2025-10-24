@@ -1,0 +1,609 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #1a1b1f;
+    color: #e2e8f0;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+}
+
+.crossed-out {
+    position: relative;
+    text-decoration: none;
+}
+
+.crossed-out::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 4px;
+    background-color: #e53e3e;
+    transform: translateY(-50%);
+}
+
+.crossed-out-full {
+    position: relative;
+    text-decoration: none;
+}
+
+.crossed-out-full::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 60%;
+    width: 100%;
+    height: 4px;
+    background-color: #e53e3e;
+    transform: translateY(-50%);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 60px;
+    font-weight: 400;
+}
+
+.main-content {
+    margin-top: 40px;
+}
+
+.main-text {
+    font-size: 2.5rem;
+    color: #e2e8f0;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+.main-text em {
+    font-style: italic;
+    color: #f1f5f9;
+}
+
+#typed-text {
+    position: relative;
+}
+
+#typed-text::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: #ffffff;
+}
+
+#title-typed-text {
+    position: relative;
+    min-height: 1.2em;
+    display: inline-block;
+}
+
+#title-typed-text::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: #1a1b1f;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Examples Section */
+.examples-section {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.example-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.example-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dont-do .card-header {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05));
+}
+
+.do-this .card-header {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.05));
+}
+
+.icon {
+    font-size: 1.2rem;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+.chat-messages {
+    padding: 24px 32px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.message:last-child {
+    margin-bottom: 0;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff0000, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    flex-shrink: 0;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.time {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.text {
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    line-height: 1.4;
+}
+
+.explanation {
+    padding: 24px 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.explanation p {
+    margin-bottom: 16px;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.explanation p:last-child {
+    margin-bottom: 0;
+}
+
+.explanation strong {
+    color: #f1f5f9;
+    font-weight: 600;
+}
+
+.bad-examples, .good-examples {
+    margin-top: 20px;
+}
+
+.bad-examples ul, .good-examples ul {
+    margin: 12px 0;
+    padding-left: 20px;
+}
+
+.bad-examples li, .good-examples li {
+    margin-bottom: 8px;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.dont-do .bad-examples li {
+    color: #fca5a5;
+}
+
+.do-this .good-examples li {
+    color: #86efac;
+}
+
+/* Footer */
+.footer {
+    margin-top: 120px;
+    background: #1a1b1f;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.footer-brand {
+    flex: 1;
+    max-width: 400px;
+}
+
+.brand-info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    background: linear-gradient(135deg, #ffffff, #e4e4e4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+}
+
+.status-text {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.brand-description {
+    color: #c9c9c9;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.action-section {
+    margin-top: 8px;
+}
+
+.tip-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(109, 106, 106, 0.1);
+    border: 1px solid rgba(49, 49, 49, 0.2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.tip-badge:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(56, 56, 56, 0.3);
+    transform: translateY(-1px);
+}
+
+.tip-icon {
+    font-size: 1rem;
+}
+
+.tip-text {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    flex: 0;
+    max-width: 200px;
+}
+
+.link-column h4 {
+    color: #f1f5f9;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.link-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-column li {
+    margin-bottom: 12px;
+}
+
+.link-column a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.link-column a:hover {
+    color: #cbd5e1;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(48, 48, 48, 0.08);
+    padding: 24px 40px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-bottom p {
+    color: #cecece;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .main-text {
+        font-size: 1.8rem;
+    }
+
+    .examples-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 60px;
+    }
+
+    .card-header {
+        padding: 20px 24px;
+    }
+
+    .chat-messages {
+        padding: 20px 24px;
+    }
+
+    .explanation {
+        padding: 20px 24px;
+    }
+
+    .footer {
+        margin-top: 80px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 50px;
+        padding: 40px 20px;
+    }
+
+    .brand-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        padding: 20px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .title {
+        font-size: 2rem;
+        letter-spacing: -1px;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 40px;
+    }
+    
+    .main-text {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+    
+    .examples-section {
+        margin-top: 50px;
+        gap: 25px;
+    }
+    
+    .card-header {
+        padding: 16px 20px;
+    }
+    
+    .card-header h3 {
+        font-size: 1rem;
+    }
+    
+    .chat-messages {
+        padding: 16px 20px;
+    }
+    
+    .explanation {
+        padding: 16px 20px;
+    }
+    
+    .message {
+        margin-bottom: 12px;
+    }
+    
+    .avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 0.7rem;
+    }
+    
+    .name {
+        font-size: 0.8rem;
+    }
+    
+    .time {
+        font-size: 0.7rem;
+    }
+    
+    .text {
+        font-size: 0.8rem;
+    }
+    
+    .explanation p {
+        font-size: 0.85rem;
+    }
+    
+    .footer-content {
+        padding: 30px 15px;
+        gap: 40px;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .action-section {
+        margin-top: 16px;
+    }
+    
+    .tip-badge {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 12px;
+    }
+    
+    .tip-text {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        padding: 16px 15px;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 320px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .main-text {
+        font-size: 1.3rem;
+    }
+    
+    .container {
+        padding: 15px 10px;
+    }
+    
+    .footer-content {
+        padding: 25px 10px;
+    }
+    
+    .tip-badge {
+        padding: 8px 10px;
+    }
+    
+    .tip-text {
+        font-size: 0.75rem;
+    }
+}
